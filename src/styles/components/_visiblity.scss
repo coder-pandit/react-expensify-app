@@ -1,0 +1,13 @@
+.show-for {
+  &-mobile {
+    @include desktop-screen {
+      display: none;
+    }
+  }
+
+  &-desktop {
+    @media (max-width: $desktop-breakpoint - 0.01rem) {
+      display: none;
+    }
+  }
+}
