@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
+import RemoveExpenseModal from './RemoveExpenseModal';
 import { startEditExpense, startRemoveExpense } from './../actions/expenses';
 
 export class EditExpensePage extends Component {
+  state = {
+    isDialogOpen: false
+  };
+
+  // show alert box when Remove Expense is clicked
+  handlePick = () => {
+    this.setState(() => ({ isDialogOpen: true }));
+  };
+
+  // to close alert box on no is clickd i.e. closing dialog box
+  handleClearSelectedOptions = () => {
+    this.setState(() => ({ isDialogOpen: false }));
+  };
+
   onSubmit = expense => {
     this.props.startEditExpense(this.props.expense.id, expense);
     this.props.history.push('/');
@@ -12,6 +27,7 @@ export class EditExpensePage extends Component {
   onRemove = () => {
     this.props.startRemoveExpense({ id: this.props.expense.id });
     this.props.history.push('/');
+    this.setState(() => ({ isDialogOpen: false }));
   };
 
   render() {
@@ -24,10 +40,15 @@ export class EditExpensePage extends Component {
         </div>
         <div className="content-container">
           <ExpenseForm expense={this.props.expense} onSubmit={this.onSubmit} />
-          <button className="button button--secondary" onClick={this.onRemove}>
+          <button className="button button--secondary" onClick={this.handlePick}>
             Remove Expense
           </button>
         </div>
+        <RemoveExpenseModal
+          isDialogOpen={this.state.isDialogOpen}
+          onRemove={this.onRemove}
+          handleClearSelectedOptions={this.handleClearSelectedOptions}
+        />
       </div>
     );
   }
