@@ -1,0 +1,25 @@
+{
+  "short_name": "Expensify",
+  "name": "Expensify App",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/favicon.png",
+      "type": "image/png",
+      "sizes": "34x34"
+    },
+    {
+      "src": "images/favicon.jpeg",
+      "type": "image/png",
+      "sizes": "225x225"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

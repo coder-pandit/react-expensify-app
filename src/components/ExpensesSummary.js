@@ -16,11 +16,11 @@ export const ExpensesSummary = ({
       <h1 className="page-header__title">
         Viewing <span>{expenseCount}</span>{' '}
         {expenseCount === 1 ? 'expense' : 'expenses'} totalling{' '}
-        <span>{numeral(expensesTotal / 100).format('$0,0.00')}</span>
+        <span>₹{numeral(expensesTotal / 100).format()}</span>
       </h1>
       <h4 className="page-header__title">
-        Out of {allExpenses} totalling{' '}
-        {numeral(allExpensesTotal / 100).format('$0,0.00')}
+        Out of {allExpenses} totalling ₹
+        {numeral(allExpensesTotal / 100).format()}
       </h4>
       <div className="page-header__actions">
         <Link className="button" to="/create">
