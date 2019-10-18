@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import AddExpensePage from './../components/AddExpensePage';
 import EditExpensePage from './../components/EditExpensePage';
@@ -13,7 +13,7 @@ export const history = createBrowserHistory();
 
 const AppRouter = () => {
   return (
-    <Router history={history}>
+    <BrowserRouter>
       <div>
         <Switch>
           {/* works same as swwitch in programming break automatically as soon as found the route */}
@@ -25,7 +25,7 @@ const AppRouter = () => {
           {/* true for all the routes if path is note specified */}
         </Switch>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 };
 
