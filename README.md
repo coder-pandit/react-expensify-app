@@ -1,4 +1,4 @@
-# react-expensify-app
+# Expensify
 Visit:- https://react-expensify-app-learn.herokuapp.com/
 
 This is an Expense app where users can add their expenses and view those expenses anytime.
